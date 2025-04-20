@@ -1,0 +1,99 @@
+# 注意: 在填路径的时间，一定要注意一下斜杠的方向， / 才正确
+# 分类的类别数量
+num_classes: 5
+
+# 项目所在的绝对路径
+project_path: "C:/Users/Lgp666/Desktop/lunw/code/projectcode/CT-valige"
+
+# 训练集所在的路径
+train_data_path: "DataSet/final/train"
+
+#验证集所在的路径
+val_data_path: "DataSet/final/valid"
+
+#测试集所在的路径
+test_data_path: "DataSet/final/test"
+
+# 某张待测试的图片地址（Grad-CAM，predict里可以用）
+img_path: "DataSet/final/test/0000_kejia/白石村 (97).jpg"
+
+# 训练的轮次
+epochs: 30
+
+# 使用什么机器训练模型，对于个人笔记本来说，可以填,cuda:0或者cpu
+# cuda:0 表示使用0号显卡训练，cpu表示使用cpu训练
+device: 'cuda:0'
+
+# 训练的批次大小
+# 如果出现报错：RuntimeError: CUDA out of memory
+# 表明电脑的显存不够，请调低这个值，每次是原来的1/2，直到改为1为止。
+batch_size: 4
+
+
+# 加载的权重路径，填空即可，不用修改
+# 这样得到的训练记录是完整的
+weights_path: ''
+
+# 是否迁移学习: false, true
+fine_tuning: True
+
+
+# 选什么优化器:
+# SGD, Adam, RMSprop, Adagrad, AdamW
+# 正常情况下推荐用 AdamW,也可以自己多尝试，实际上区别不大
+opt_name: 'AdamW'
+
+# number of workers 使用多少个线程加载数据
+# 默认设置为0即可，可以参考：https://blog.csdn.net/qq_28057379/article/details/115427052
+nw: 2
+
+# 训练好的Improve_ConvNeXt模型名称
+Improve_ConvNeXt: 'Model/Improve_ConvNeXt/weights/xxx'
+
+# 训练好的Model_AlexNet模型名称
+Model_AlexNet: 'Model/Model_AlexNet/weights/XXX'
+
+# 训练好的Model_ConvNeXt模型名称
+Model_ConvNeXt: 'Model/Model_ConvNeXt/weights/XXX'
+
+# 训练好的Model_EfficientNet模型名称
+Model_EfficientNet: 'Model/Model_EfficientNet/weights/XXX'
+
+# 训练好的Model_GoogLeNet模型名称
+Model_GoogLeNet: 'Model/Model_GoogLeNet/weights/XXX'
+
+# 训练好的Model_MobileNet模型名称
+Model_MobileNet: 'Model/Model_MobileNet/weights/XXX'
+
+# 训练好的Model_ResNet模型名称
+Model_ResNet: 'Model/Model_ResNet/weights/XXX'
+
+# 训练好的Model_Swin_Transformer模型名称
+Model_Swin_Transformer: 'Model/Model_Swin_Transformer/weights/XXX'
+
+# 训练好的Model_VGG模型名称
+Model_VGG: 'Model/Model_VGG/weights/XXX'
+
+# 网站使用的模型路径
+Web_Model: 'Model/Improve_ConvNeXt/weights/XXX'
+
+# 网站使用的端口
+Web_Port: 8001
+
+# 不同类别的名称列表
+display_labels:
+    - 'kejia'
+    - 'linchuan'
+    - 'lulin'
+    - 'yuanzhou'
+    - 'yuzhang'
+
+# 是否要在混淆矩阵每个单元格上显示具体数值
+show_figure: false
+
+# 是否要对混淆矩阵结果进行归一化
+normalization: true
+
+
+
+
